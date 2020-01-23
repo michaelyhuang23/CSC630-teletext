@@ -30,12 +30,11 @@ public class TeletextList
    */
   public void insert(String msg)
   {
-    ________________________________________
-    ...
+	  addAfter(heading.getNext(),msg);
   }
 
   /**
-   * Deletes the node that follows topNode from the headlines list,
+   * Deletes the node that follows topNode f rom the headlines list,
    * unless that node happens to be heading or the node before or after
    * heading that holds a blank line.
    */
@@ -72,8 +71,10 @@ public class TeletextList
    */
   private ListNode2 addAfter(ListNode2 node, String msg)
   {
-    ________________________________________
-    ...
+    ListNode2 newNode= new ListNode2(msg, node,node.getNext());
+    node.getNext().setPrevious(newNode);
+    node.setNext(newNode);
+    return newNode;
   }
 
   /**
@@ -81,8 +82,10 @@ public class TeletextList
    */
   private void remove(ListNode2 node)
   {
-    ________________________________________
-    ...
+     node.getPrevious().setNext(node.getNext());
+     node.getNext().setPrevious(node.getPrevious());
+     node.setNext(null);
+     node.setPrevious(null);
   }
 
   /**
