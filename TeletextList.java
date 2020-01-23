@@ -20,8 +20,11 @@ public class TeletextList
    */
   public TeletextList(String[] headlines)
   {
-    ________________________________________
-    ...
+    ListNode2 blank = new ListNode2("", null, null);
+    heading = new ListNode2("Today's Headlines:", blank, blank);
+    blank.setPrevious(heading);
+    blank.setNext(heading);
+    topNode = heading;
   }
 
   /**
@@ -40,8 +43,11 @@ public class TeletextList
    */
   public void delete()
   {
-    ________________________________________
-    ...
+    ListNode2 node = topNode.getNext();
+    if (node == heading || node == heading.getNext() || node == heading.getPrevious()) {
+      return;
+    }
+    remove(node);
   }
 
   /**
@@ -49,8 +55,7 @@ public class TeletextList
    */
   public void scrollUp()
   {
-    ________________________________________
-    ...
+    topNode = topNode.getNext();
   }
 
   /**
