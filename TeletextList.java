@@ -20,10 +20,13 @@ public class TeletextList
    */
   public TeletextList(String[] headlines)
   {
-    ListNode2 blank = new ListNode2("", null, null);
-    heading = new ListNode2("Today's Headlines:", blank, blank);
-    blank.setPrevious(heading);
-    blank.setNext(heading);
+    ListNode2 blank1 = new ListNode2("\n", null, null);
+    ListNode2 blank2 = new ListNode2("\n", null, null);
+    heading = new ListNode2("Today's Headlines:", blank1, blank2);
+    blank1.setNext(heading);
+    blank1.setPrevious(blank2);
+    blank2.setPrevious(heading);
+    blank2.setNext(blank1);
     topNode = heading;
   }
 
