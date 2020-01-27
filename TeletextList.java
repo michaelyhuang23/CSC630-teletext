@@ -79,10 +79,7 @@ public class TeletextList
    */
   private ListNode2 addAfter(ListNode2 node, String msg)
   {
-    ListNode2 newNode= new ListNode2(msg, node,node.getNext());
-    node.getNext().setPrevious(newNode);
-    node.setNext(newNode);
-    return newNode;
+	return addBefore(node.getNext(),msg);
   }
 
   /**
