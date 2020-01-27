@@ -1,5 +1,6 @@
 /**
  * Implements the doubly-linked list of messages for Teletext
+ * author: Jackson Diodati and Michael Huang
  */
 
 import java.awt.Graphics;
